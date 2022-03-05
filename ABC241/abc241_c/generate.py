@@ -9,7 +9,7 @@ def main():
     N = random.randint(1, 1000)  # TODO: edit here
     S = [None for _ in range(N)]
     for i in range(N):
-        S[i] = ''.join([random.choice('abcde') for _ in range(random.randint(1, 100))])  # TODO: edit here
+        S[i] = ''.join([random.choice(['.', '#']) for _ in range(N)])  # TODO: edit here
     print(N)
     for i in range(N):
         print(S[i])
