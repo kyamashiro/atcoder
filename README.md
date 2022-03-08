@@ -1,6 +1,6 @@
 ```sh
 $ oj login https://atcoder.jp/
-$ oj prepare https://atcoder.jp/contests/abc241
+$ oj-prepare https://atcoder.jp/contests/abc241
 $ oj-test-python
 # ランダムテスト
 $ oj g/i ./generate.py
