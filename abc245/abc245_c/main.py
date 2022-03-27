@@ -7,17 +7,21 @@ NO = 'No'
 
 # def solve(N: int, K: int, A: List[int], B: List[int]) -> str:
 def solve(N, K, A, B):
+    dp, ep = [0] * N, [0] * N
+    dp[0], ep[0] = 1, 1
     for i in range(N - 1):
-        cnt = 0
-        if abs(A[i + 1] - A[i]) <= K or abs(B[i + 1] - A[i]) <= K:
-            cnt += 1
+        if dp[i]:
+            if (abs(A[i] - A[i + 1]) <= K): dp[i + 1] = 1
+            if (abs(A[i] - B[i + 1]) <= K): ep[i + 1] = 1
+        if ep[i]:
+            if (abs(B[i] - A[i + 1]) <= K): dp[i + 1] = 1
+            if (abs(B[i] - B[i + 1]) <= K): ep[i + 1] = 1
 
-        if abs(A[i + 1] - B[i]) <= K or abs(B[i + 1] - B[i]) <= K:
-            cnt += 1
-
-        if cnt == 0:
+    for i in range(N):
+        if dp[i] or ep[i]:
+            continue
+        else:
             return NO
-
     return YES
 
 
