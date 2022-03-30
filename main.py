@@ -1,9 +1,7 @@
 if __name__ == '__main__':
-    S = "different"
-
-    for i in range(len(S)):
-        for j in range(i + 1, len(S)):
-            if S[i] == S[j]:
-                print("no")
-                exit()
-    print("yes")
+    A, B = map(int, "1 2".split())
+    S = "7444"
+    if len(S) == A + B + 1 and S[A] == "-" and S.count("-") == 1:
+        print("Yes")
+    else:
+        print("No")
