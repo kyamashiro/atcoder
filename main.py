@@ -1,7 +1,15 @@
 if __name__ == '__main__':
-    A, B = map(int, "1 2".split())
-    S = "7444"
-    if len(S) == A + B + 1 and S[A] == "-" and S.count("-") == 1:
-        print("Yes")
+    S = "fajsonlslfepbjtsaayxbymeskptcumtwrmkkinjxnnucagfrg"
+
+    alpha = []
+    for i in range(97, 123):
+        alpha.append(chr(i))
+
+    for i in range(len(S)):
+        for v in alpha:
+            if v == S[i]:
+                alpha.remove(v)
+    if len(alpha) != 0:
+        print(alpha[0])
     else:
-        print("No")
+        print("None")
