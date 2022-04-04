@@ -25,7 +25,7 @@ def solve(N):
 
 
 if __name__ == '__main__':
-    N = 9
+    N = int(input())
 
     ans = solve(N)
     print(ans)
